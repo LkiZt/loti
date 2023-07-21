@@ -1,0 +1,782 @@
+/* Общие настройки */
+html,
+body {
+    height: 100%;
+}
+@font-face {
+    font-family: 'Orchidea Pro';
+    src: url('../fonts/OrchideaPro-Medium.eot');
+    src: url('../fonts/OrchideaPro-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/OrchideaPro-Medium.woff2') format('woff2'),
+        url('../fonts/OrchideaPro-Medium.woff') format('woff'),
+        url('../fonts/OrchideaPro-Medium.ttf') format('truetype'),
+        url('../fonts/OrchideaPro-Medium.svg#OrchideaPro-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    font-size: 45px;
+    color: #F9F0F0;
+    font-family: 'Fira Sans', sans-serif;
+}
+[class*=__container] {
+    padding: 0 10px;
+}
+
+@media (min-width: 768px) {
+    [class*=__container] {
+        max-width: 1580px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+}
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+/* Общие стили */
+.title {
+    font-family: "Orchidea Pro";
+    font-size: .755555rem;
+    font-weight: 500;
+    color: #422;
+    text-transform: uppercase;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .title {
+        font-size: 1.777777rem;
+        text-align: left;
+    }
+}
+.button {
+    color: #422;
+    width: 90%;
+    text-align: center;
+    font-size: .488888rem;
+    font-weight: 600;
+    letter-spacing: .0667rem;
+    border-radius: 45px;
+    border: 3px solid #422;
+    padding: 20px 0;
+}
+@media (min-width: 560px) {
+    .button {
+        width: 90%;
+        font-size: .666666rem;
+    }
+}
+@media (min-width: 1280px) {
+    .button:hover {
+        background: #F2E8E7;
+        transition: 0.4s;
+    }
+}
+
+/* Фон сайта */
+.page {
+    flex: 1 1 auto;
+    background-image: url(../img/background.webp);
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.page::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url(../img/background.webp);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transform: translate3d(0, 0, 0);
+  }
+
+/* Шапка сайта */
+.header {
+    background: #F9F0F0;
+}
+.header h1 {
+    text-align: center;
+}
+.header__logo {
+    padding-top: 20px;
+    display: block;
+    font-size: .666666rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: #442222;
+    font-family: "Orchidea Pro";
+}
+@media (min-width: 550px) {
+    .header__logo {
+        font-size: 1.333333rem;
+        letter-spacing: .133333rem;
+        transition: 0.4s;
+    }
+}
+@media (min-width: 1280px) {
+    .header__logo:hover {
+        font-size: 1.4rem;
+        border-bottom: 3px dashed #422;
+        transition: 0.4s;
+    }
+}
+
+@media (min-width: 768px) {
+    .header__nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 0 28px;
+    } 
+}
+.header__list {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
+    padding: 0 0 20px;
+}
+@media (min-width: 768px) {
+    .header__list {
+        column-gap: 20px;
+        padding: 0;
+    }
+}
+@media (min-width: 1120px) {
+    .header__list {
+        column-gap: 60px;
+    }
+}
+.header__link {
+    color: #442222;
+    font-size: .355555rem;
+    font-weight: 600;
+}
+@media (min-width: 550px) {
+    .header__link {
+        font-size: .444444rem;
+        letter-spacing: .066666rem;
+    }
+}
+@media (min-width: 950px) {
+    .header__link {
+        font-size: .666666rem;
+        letter-spacing: .066666rem;
+        transition: 0.4s;
+    }
+}
+@media (min-width: 1280px) {
+    .header__link:hover {
+        border-bottom: 3px dashed #422;
+        transition: 0.4s;
+    }
+}
+
+/* Секция Hero */
+.hero {
+    position: relative;
+    padding-top: 40px;
+}
+@media (min-width: 768px) {
+    .hero {
+        padding: 100px 0 0;
+    }
+}
+.hero__image {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+@media (min-width: 1921px) {
+    .hero__image {
+        width: 100vw;
+    }
+}
+.hero__slogan {
+    position: relative;
+    z-index: 10;
+    color: #DDB2B2;
+    font-size: .355555rem;
+    font-weight: 300;
+}
+@media (min-width: 768px) {
+    .hero__slogan {
+        line-height: 109.5%;
+        font-size: .888888rem;
+    }
+}
+.hero__title {
+    position: relative;
+    z-index: 10;
+    font-family: "Orchidea Pro";
+    font-size: .71111rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    max-width: 320px;
+    margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+    .hero__title {
+        font-size: 1.333333rem;
+        max-width: 700px;
+        margin-bottom: 25px;
+    }
+}
+@media (min-width: 1440px) {
+    .hero__title {
+        font-size: 2.222222rem;
+        max-width: 1000px;
+    }
+}
+.hero__desc {
+    position: relative;
+    z-index: 10;
+    font-size: .488888rem;
+    font-weight: 300;
+    line-height: 109.5%;
+    margin-bottom: 20px;
+    max-width: 320px;
+}
+@media (min-width: 768px) {
+    .hero__desc {
+        font-size: 0.7rem;
+        max-width: 650px;
+        margin-bottom: 70px;
+    }
+}
+@media (min-width: 1220px) {
+    .hero__desc {
+        font-size: 1rem;
+        max-width: 1000px;
+    }
+}
+.hero__buttons {
+    position: relative;
+    z-index: 10;
+    margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+    .hero__buttons {
+        display: flex;
+        column-gap: 60px;
+        margin-bottom: 70px;
+    }
+}
+.hero__buy, .hero__about {
+    display: block;
+    width: 50%;
+    border-radius: 50px;
+    text-align: center;
+    font-size: .4444rem;
+}
+@media (min-width: 768px) {
+    .hero__buy, .hero__about {
+        font-size: .533333rem;
+        width: 250px;
+        height: 80px;
+        border-radius: 50px;
+        text-align: center;
+    }
+}
+.hero__buy {
+    color: #422;
+    background: #F2E8E7;
+    padding: 25px 0;
+    font-weight: 600;
+    letter-spacing: .0533rem;
+    margin-bottom: 10px;
+    transition: 0.4s;
+}
+@media (min-width: 1280px) {
+    .hero__buy:hover {
+        border: 3px solid #F2E8E7;
+        color: #F2E8E7;
+        background: none;
+        transition: 0.4s;
+    }
+}
+.hero__about {
+    border: 3px solid #F2E8E7;
+    padding: 20px 0;
+    font-weight: 600;
+    letter-spacing: .0533rem;
+    transition: 0.4s;
+}
+@media (min-width: 1280px) {
+    .hero__about:hover {
+        color: #422;
+        background: #F2E8E7;
+        border: none;
+        transition: 0.4s;
+    }
+}
+.hero__benefits {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: rgba(242, 232, 231, 0.01);
+    box-shadow: 0px 80px 65px 0px rgba(212, 212, 212, 0.20) inset, 0px 1px 40px 0px rgba(226, 226, 226, 0.20) inset, 0px 82px 68px 65px rgba(182, 103, 103, 0.10) inset;
+    backdrop-filter: blur(10px);
+}
+@media (min-width: 768px) {
+    .hero__benefits {
+        padding: 0;
+        height: 120px;
+    }
+}
+@media (min-width: 1440px) {
+    .hero__benefits {
+        padding: 0;
+        height: 200px;
+        justify-content: center;
+        column-gap: 120px;
+    }
+}
+.hero__benefit {
+    padding: 0 8px;
+    font-size: .31111rem;
+    line-height: 109.5%;
+    font-weight: 300;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .hero__benefit {
+        font-size: .71111rem;
+        max-width: 400px;
+    }
+}
+@media (min-width: 1440px) {
+    .hero__benefit {
+        font-size: 1.3333rem;
+        max-width: 400px;
+    }
+}
+/* Секция Options */
+.options {
+    padding: 0 0 40px;
+}
+@media (min-width: 768px) {
+    .options {
+        padding: 0 0 80px;
+    }
+}
+.options__title {
+    padding: 30px 0;
+}
+@media (min-width: 768px) {
+    .options__title {
+        padding: 80px 0;
+    }
+}
+@media (min-width: 768px) {
+    .options__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+}
+.options__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+}
+.options__item:not(:last-child) {
+    margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+    .options__item:not(:last-child) {
+        margin-bottom: 0px;
+    }
+}
+@media (min-width: 1024px) {
+    .options__item {
+        width: 30%;
+        justify-content: center;
+    }
+}
+
+/* Секция reviews */
+.reviews {
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    .reviews {
+        padding-bottom: 140px;
+        overflow: hidden;
+    }
+}
+.reviews__title {
+    margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+    .reviews__title {
+        margin-bottom: 80px;
+    }
+}
+.reviews-slide {
+    border-radius: 10px;
+    background: rgba(219, 171, 159, 0.4);
+    box-shadow: 0px 80px 65px 0px rgba(212, 212, 212, 0.20) inset, 0px 1px 40px 0px rgba(226, 226, 226, 0.20) inset, 0px 82px 68px 65px rgba(182, 103, 103, 0.10) inset, 0px 13px 40px 0px rgba(255, 255, 255, 0.25) inset;
+    backdrop-filter: blur(7.5px);
+}
+@media (min-width: 768px) {
+    .reviews-slide {
+        min-height: 380px;
+        background: rgba(245, 200, 189, 0.4);
+    }
+}
+.reviews-slide__text {
+    padding: 20px;
+    font-size: .444444rem;
+    font-weight: 300;
+}
+@media (min-width: 768px) {
+    .reviews-slide__text {
+        padding: 50px 100px 0;
+        font-size: .888888rem;
+        line-height: 109.5%;
+    }
+}
+.reviews-slide__author {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+    padding: 10px;
+}
+@media (min-width: 768px) {
+    .reviews-slide__author {
+        justify-content: flex-end;
+        column-gap: 30px;
+        padding: 40px;
+    }
+}
+.reviews-slide__name {
+    text-align: center;
+    font-size: .533333rem;
+    font-weight: 300;
+}
+@media (min-width: 768px) {
+    .reviews-slide__name {
+        font-size: 1rem;
+        line-height: 109.5%;
+    }
+}
+.reviews-slide__photo {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Веб-страница Bra, Panties, Set */
+.catalog {padding: 30px 0 50px;}
+@media (min-width: 768px) {
+    .catalog {padding: 50px 0 90px;}
+}
+@media (min-width: 1024px) {
+    .catalog {padding: 80px 0 120px;}
+}
+.catalog__title {margin-bottom: 40px;}
+@media (min-width: 768px) {
+    .catalog__title {margin-bottom: 60px;}
+}
+@media (min-width: 1024px) {
+    .catalog__title {margin-bottom: 80px;}
+}
+@media (min-width: 768px) {
+    .catalog__list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        column-gap: 60px;
+        row-gap: 80px;
+    }
+}
+.catalog__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .catalog__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1 1 30%;
+    }
+}
+.catalog__subtitle, .catalog__buy {
+    color: #422;
+}
+.catalog__subtitle {
+    font-size: .711111rem;
+    margin: 10px 0 15px;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .catalog__subtitle {
+        font-size: 1rem;
+        line-height: 109.5%;
+        max-width: 480px;
+    }
+}
+.catalog__buy {
+    margin-bottom: 25px;
+}
+@media (min-width: 768px) {
+    .catalog__buy {
+        margin-bottom: 0;
+    }
+}
+.catalog__buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    row-gap: 20px;
+}
+@media (min-width: 768px) {
+    .catalog__buttons {
+        column-gap: 30px;
+        margin-top: 60px;
+    }
+}
+@media (min-width: 1024px) {
+    .catalog__buttons {
+        column-gap: 90px;
+        margin-top: 100px;
+    }
+}
+.catalog__link {
+    display: block;
+    width: 300px;
+    border-radius: 100px;
+    text-align: center;
+    color: #422;
+    background: #F2E8E7;
+    padding: 25px 0;
+    font-size: .35555rem;
+    font-weight: 600;
+    letter-spacing: .0533rem;
+}
+@media (min-width: 768px) {
+    .catalog__link {
+        width: 350px;
+        font-size: .444444rem;
+    }
+}
+@media (min-width: 1024px) {
+    .catalog__link {
+        width: 450px;
+        font-size: .533333rem;
+    }
+}
+@media (min-width: 1280px) {
+    .catalog__link:hover {
+        border: 1px solid #422;
+        background: none;
+        transition: 0.4s;
+    }
+}
+
+/* Веб-страница About */
+.about {
+    padding: 30px 0;
+}
+@media (min-width: 768px) {
+    .about {
+        padding: 50px 0 70px;
+    }
+}
+@media (min-width: 1024px) {
+    .about {
+        padding: 80px 0 100px;
+    }
+}
+.about__title {
+    margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+    .about__title {
+        margin-bottom: 50px;
+    }
+}
+@media (min-width: 1024px) {
+    .about__title {
+        margin-bottom: 80px;
+    }
+}
+.about__subtitle {
+    color: #422;
+    font-size: .622222rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+@media (min-width: 768px) {
+    .about__subtitle {
+        font-size: .8rem;
+        line-height: 109.5%;
+        margin-bottom: 40px;
+    }
+}
+@media (min-width: 1024px) {
+    .about__subtitle {
+        font-size: 1rem;
+    }
+}
+.about__text {
+    color: #422;
+    font-size: .488888rem;
+    margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+    .about__text {
+        font-size: .666666rem;
+        line-height: 109.5%;
+    }
+}
+@media (min-width: 1024px) {
+    .about__text {
+        font-size: .888888rem;
+        line-height: 109.5%;
+    }
+}
+
+/* Веб-страница Contacts */
+.contacts {
+    padding: 30px 0 50px;
+}
+@media (min-width: 768px) {
+    .contacts {
+        padding: 80px 0 100px;
+    }
+}
+.contacts__title {
+    font-family: 'Orchidea Pro';
+    font-size: .844444rem;
+    font-weight: 500;
+}
+@media (min-width: 768px) {
+    .contacts__title {
+        font-size: 1.777777rem;
+    }
+}
+.contacts__subtitle {
+    font-weight: 500;
+    margin: 30px 0 40px;
+}
+@media (min-width: 768px) {
+    .contacts__subtitle {
+        line-height: 109.5%;
+        margin: 80px 0 60px;
+    }
+}
+.contacts__item {
+    display: flex;
+    align-items: center;
+    column-gap: 25px;
+}
+.contacts__item:not(:last-child) {
+    margin-bottom: 20px;
+}
+.contacts__link {
+    font-size: .488888rem;
+}
+@media (min-width: 768px) {
+    .contacts__link {
+        font-size: .888888rem;
+    }
+}
+
+/* Подвал сайта */
+.footer {
+    background: #F9F0F0;
+}
+.footer__flex {
+    padding: 20px 0;
+}
+@media (min-width: 768px) {
+    .footer__flex {
+        padding: 40px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+.footer__copyright {
+    color: #422;
+    font-family: Ubuntu;
+    font-size: .311111rem;
+    text-align: center;
+    padding: 0 0 20px;
+}
+@media (min-width: 768px) {
+    .footer__copyright {
+        line-height: 157.4%;
+        font-size: .444444rem;
+    }
+}
+@media (min-width: 1024px) {
+    .footer__copyright {
+        line-height: 157.4%;
+        font-size: .533333rem;
+    }
+}
+.footer__developers {
+    display: flex;
+    column-gap: 20px;
+    justify-content: center;
+}
+@media (min-width: 768px) {
+    .footer__developers {
+        column-gap: 30px;
+    }
+}
+@media (min-width: 1024px) {
+    .footer__developers {
+        column-gap: 40px;
+    }
+}
+.footer_name, .footer__email, .footer__link {
+    color: #422;
+    font-weight: 300;
+    font-family: Ubuntu;
+    font-size: .311111rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .footer_name, .footer__email, .footer__link {
+        font-size: .444444rem;
+        line-height: 115.9%;
+        text-align: center;
+    }
+}
+@media (min-width: 1024px) {
+    .footer_name, .footer__email, .footer__link {
+        font-size: .533333rem;
+        line-height: 115.9%;
+        text-align: center;
+    }
+}
+.footer__link {
+    display: inline-block;
+    border-bottom: 1px dashed #422;
+}
